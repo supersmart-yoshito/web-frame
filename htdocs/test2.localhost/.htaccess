@@ -1,0 +1,16 @@
+#AuthUserFile /home/clipooh/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName "Secret Area"
+#AuthType Basic
+#
+#require valid-user
+#
+#<Files ~ "^.(htpasswd|htaccess)$">
+#    deny from all
+#</Files>
+
+php_value date.timezone Asia/Tokyo
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

@@ -1,0 +1,605 @@
+/**
+ *
+ * 配色
+ *
+ */
+.red {
+	color: #FFFFFF;
+	background-color: #FF4040;
+}
+
+#keyvisual{
+	position: relative;
+	z-Index: 1;
+}
+
+#catchcopy {
+	margin: 0px;
+	padding: 0px;
+
+	font-weight: bold;
+	font-family: cursive, fantasy, sans-serif;
+	background-color: rgba(255,255,255,0.4);
+	position: relative;
+	top: -30px;
+	z-Index: 2;
+}
+#search {
+	width: 100%;
+
+	position: relative;
+	top: -15px;
+
+}
+#search,
+#search *
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+/**
+ *
+ * 汎用テキストクラス
+ *
+ */
+.title
+{
+	height: 40px;
+	margin: 0px;
+	padding:  3px;
+
+	font-size: 14px;
+	line-height: 1.0;
+}
+.date
+{
+	margin: 0px;
+	padding:  3px;
+
+	color: #808080;
+	font-size: 14px;
+	line-height: 1.0;
+	text-align: right;
+}
+.category
+{
+	margin: 3px 2px 1px 2px;
+	padding: 5px;
+
+	font-size: 11px;
+	line-height: 1.0;
+
+	-webkit-border-radius: 8px;/* width,heightの半分 */
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	display: inline-block;
+}
+
+.event-title
+{
+	height: 20px;
+	margin: 0px;
+	padding: 3px;
+
+	font-size: 14px;
+	line-height: 1.0;
+}
+.event-date,
+.event-place
+{
+	margin: 0px;
+	padding: 3px;
+
+	font-size: 10px;
+	line-height: 1.0;
+}
+
+
+
+ul {
+	margin:  0px;
+	padding: 0px;
+}
+
+ul.none-list {
+	list-style: none;
+}
+
+.maxwidth {
+	width: 100% ;
+}
+
+.border-solid1 {
+	border: 1px solid ;
+}
+
+/**
+ *
+ *
+ *
+ */
+
+.member-icon {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;/* width,heightの半分 */
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+
+
+/**
+ *
+ * タブ関連
+ *
+ */
+
+.ui-tabs
+.ui-tabs-panel
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.tab {
+	width: 100%
+	margin: 0px;
+	padding: 0px;
+}
+.tab > ul.tab-list {
+	width: 100%
+	margin: 0px;
+	padding: 0px;
+}
+.tab > ul.tab-list > li > a {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	font-family: cursive, fantasy, sans-serif;
+}
+/*
+.tab > ul.tab-list {
+	width: 100%;
+
+	list-style: none;
+}
+.tab > ul.tab-list > li {
+	width: 50%;
+	height: 30px;
+
+	float: left;
+	display: inline;
+}
+.tab > ul.tab-list > li > a {
+
+	margin: 10px 0px 10px 10px;
+	display: block;
+}
+*/
+
+
+/**
+ *
+ * ヘッダ
+ *
+ */
+header > ul {
+	text-align: right;
+	height: 60px;
+} 
+header > ul > li {
+	margin: 10px;
+	display: inline-block ;
+	vertical-align: middle;
+}
+header > ul > li > a {
+	width: 100%;
+	display: block;
+}
+header > ul > li > a > img {
+	text-align: left;
+	width: 100%;
+}
+
+
+/**
+ *
+ * ヘッダナビゲーション
+ *
+ */
+nav > ul {
+}
+
+nav > ul > li {
+	width: 25% ;
+	float: left ;
+	display: inline;
+}
+
+nav > ul > li > a {
+	width: 100%;
+	display: block;
+}
+
+nav > ul > li > a > img {
+	width: 100%;
+}
+
+/**
+ *
+ * メニュー
+ *
+ */
+ul.menu-2-columns > li {
+	width: 50%;
+	float: left;
+	display: inline;
+}
+
+ul.menu-2-columns > li > a {
+	display: block;
+	text-align: center;
+}
+
+ul.menu-2-columns > li > a > img {
+	width: 100%;
+}
+
+/**
+ *
+ * コンテンツリスト
+ *
+ */
+ul.item-list {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.item-list > li {
+	display: inline;
+}
+ul.item-list > li:last-child {
+}
+
+ul.item-list > li > a {
+	display: block;
+	height: 90px;
+}
+ul.item-list > li:nth-child(2n) > a {
+	background-color: #F0F0F0;
+}
+ul.item-list > li:last-child > a {
+	margin-right: 10px;
+	height: 25px;
+
+	text-align: right;
+}
+
+ul.item-list > li > a > div.list-thumbnail {
+	float: left;
+	height: 90px;
+	width: 90px;
+}
+
+ul.item-list > li > a > div.list-thumbnail > img {
+	margin: 5px;
+	height: 80px;
+	width: 80px;
+}
+
+ul.item-list > li > a > div.list-content {
+	margin-left: -90px;
+	height: 90px;
+	width: 100%;
+
+	float: right;
+	text-align: left;
+}
+
+ul.item-list > li > a > div.list-content * {
+	margin-left: 90px;
+
+}
+
+
+/**
+ *
+ * イベントリスト
+ *
+ */
+ul.event-list {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.event-list > li {
+	display: inline;
+}
+ul.event-list > li:last-child {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.event-list > li > a {
+	display: block;
+	height: 90px;
+}
+ul.event-list > li:nth-child(2n) > a {
+	background-color: #F0F0F0;
+}
+ul.event-list > li:last-child > a {
+	height: auto;
+	text-align: right;
+}
+ul.event-list > li:last-child > a > p {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.event-list > li > a > div.event-thumbnail {
+	float: left;
+	height: 90px;
+	width: 90px;
+}
+
+ul.event-list > li > a > div.event-thumbnail > img {
+	margin: 5px;
+	height: 80px;
+	width: 80px;
+}
+
+ul.event-list > li > a > div.event-content {
+	margin-left: -90px;
+	height: 90px;
+	width: 100%;
+
+	float: right;
+	text-align: left;
+}
+
+ul.event-list > li > a > div.event-content * {
+	margin-left: 90px;
+
+}
+
+/**
+ *
+ * クリップリスト
+ *
+ */
+ul.clip-list {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+ul.clip-list > li {
+	width: 100%;
+
+	display: inline;
+}
+ul.clip-list > li:last-child {
+}
+
+ul.clip-list > li > a {
+	width: 100%;
+	display: block;
+}
+ul.clip-list > li:nth-child(2n) > a {
+	width: 100%;
+}
+ul.clip-list > li:last-child > a {
+	height: 25px;
+	margin-right: 10px;
+	text-align: right;
+}
+ul.clip-list > li > a > div.clip-label {
+	width: 100%;
+	text-align: left;
+}
+
+ul.clip-list > li > a > div.clip-content {
+	border-bottom: 1px dotted;
+}
+ul.clip-list > li > a > div.clip-content > img {
+	width: 100%;
+}
+
+/**
+ *
+ * 吹き出し
+ *
+ */
+/* balloon-left */
+.balloon-left {
+	position: relative;
+	display: inline-block;
+	padding: 0 15px;
+	width: auto;
+	min-width: 115px;
+	height: 40px;
+	color: #F6F6F6;
+	line-height: 40px;
+	text-align: center;
+	background: #19283C;
+	z-index: 0;
+}
+.balloon-left:after {
+	content: "";
+	position: absolute;
+	top: 50%; left: -10px;
+	margin-top: -10px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #19283C transparent transparent;
+}
+
+
+/**
+ *
+ * クリップ投稿
+ *
+ */
+
+#clip-post {
+	display: none;
+}
+
+div#clip-image-part {
+	width: 100%;
+}
+
+div#clip-title {
+	margin: 10px
+}
+div#clip-title input[name=title] {
+	width: 100%;
+}
+
+ul#clip-images {
+	margin: 10px
+}
+ul#clip-images li {
+	max-width: 25%;
+	max-height: 80px;
+
+	margin: 0px 0px 10px 0px;
+	float: left;
+	display: inline;
+}
+ul#clip-images li div {
+	margin: 0px;
+	padding: 0px;
+	position: relative ;
+}
+ul#clip-images li div input {
+	display: none;
+}
+ul#clip-images li img.clip-image {
+/*
+	margin: 5px 5px 5px 5px;
+*/
+	text-align: center;
+	width: 90%;
+	height: 90%;
+	overflow: hidden;
+}
+
+ul#clip-images li img.clip-cancel {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: none;
+	position: absolute;
+	opacity: 0.7;
+}
+ul#clip-images li:nth-child(4n+1) img.clip-image {
+/*
+	margin-left: 10px;
+*/
+}
+ul#clip-images li:nth-child(4n) img.clip-image {
+/*
+	margin-right: 10px;
+*/
+}
+
+
+#photo-clip {
+	heigth: 100%;
+	width: 100%;
+
+	margin: 0px;
+	padding: 0px;
+
+	list-style: none;
+	background-color: #000000;
+}
+#photo-clip li {
+	width: 50%;
+/*
+	height: 100px;
+*/
+
+	float: left;
+	display: inline;
+/*
+	overflow: hidden;
+*/
+}
+#photo-clip li a {
+	width: 100%;
+	height: 160px;
+
+	margin: 1px;
+	overflow: hidden;
+	display: block;
+}
+#photo-clip li a img {
+	border: 1px solid;
+}
+#photo-clip li a img.max-width {
+	width: 100%;
+}
+#photo-clip li a img.max-heigth {
+	height: 100%;
+/*
+	width: 100%
+	max-height: 100px;
+*/
+}
+
+/**
+ *
+ * フレームテーブル
+ *
+ */
+.frame,
+.frame > tbody > tr
+{
+	width: 100%;
+}
+.frame,
+.frame > tbody > tr,
+.frame > tbody > tr > th,
+.frame > tbody > tr > td
+{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+.frame > tbody > tr > th
+{
+	width: 30%;
+	color: #FFFFFF;
+	background-color: #c03030;
+}
+.frame > tbody > tr > td
+{
+	padding: 3px;
+	width: 70%;
+	background-color: #f0f0f0;
+}
+/*
+.frame > tbody > tr:first-child > th
+{
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.frame > tbody > tr:last-child > th
+{
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+*/
+/*.frame > tbody > tr > td input[type=text],*/
+.frame > tbody > tr > td textarea
+{
+	width: 100%;
+}

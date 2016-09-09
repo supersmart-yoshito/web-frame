@@ -1,0 +1,23 @@
+/**
+ *
+ *
+ *
+ */
+
+
+/**
+ *
+ * メモ関連
+ *
+ */
+div.memo {
+}
+
+div.no-memo {
+
+	width: 200px ;
+	height: 200px ;
+
+	background-color: rgba(0,0,0,0.7);
+}
+
