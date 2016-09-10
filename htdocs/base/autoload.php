@@ -3,6 +3,7 @@
 $gDirs = array(
 	PATH_ROOT.'/models/base',
 	PATH_ROOT.'/controllers/base',
+	PATH_MODELS,
 	PATH_CONTROLLERS,
 ) ;
 

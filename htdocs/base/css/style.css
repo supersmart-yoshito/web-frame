@@ -3,39 +3,59 @@
  * 配色
  *
  */
-.red {
-	color: #FFFFFF;
-	background-color: #FF4040;
+
+/**
+ *
+ * ボタン
+ *
+ */
+
+/* 丸ボタン */
+.btn-circle {
+
+	width: 64px;
+	height: 64px;
+
+	-webkit-border-radius: 32px;/* width,heightの半分 */
+	-moz-border-radius: 32px;
+	border-radius: 32px;
+	border-style: none;
 }
 
-#keyvisual{
-	position: relative;
-	z-Index: 1;
+/**
+ *
+ * 枠
+ *
+ */
+.frame-dotted {
+	height: 180px ;
+	border: dotted 1px;
+
+	background-color: #eeeeee;
 }
 
-#catchcopy {
-	margin: 0px;
-	padding: 0px;
-
-	font-weight: bold;
-	font-family: cursive, fantasy, sans-serif;
-	background-color: rgba(255,255,255,0.4);
-	position: relative;
-	top: -30px;
-	z-Index: 2;
-}
-#search {
-	width: 100%;
-
-	position: relative;
-	top: -15px;
-
-}
+/**
+ *
+ * 検索ボックス
+ *
+ */
 #search,
 #search *
 {
 	margin: 0px;
 	padding: 0px;
+}
+
+/**
+ *
+ *
+ *
+ */
+.flip-description {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	display: none;
 }
 
 /**
@@ -143,12 +163,12 @@ ul.none-list {
 }
 
 .tab {
-	width: 100%
+	width: 100% ;
 	margin: 0px;
 	padding: 0px;
 }
 .tab > ul.tab-list {
-	width: 100%
+	width: 100% ;
 	margin: 0px;
 	padding: 0px;
 }
@@ -158,25 +178,6 @@ ul.none-list {
 	font-size: 12px;
 	font-family: cursive, fantasy, sans-serif;
 }
-/*
-.tab > ul.tab-list {
-	width: 100%;
-
-	list-style: none;
-}
-.tab > ul.tab-list > li {
-	width: 50%;
-	height: 30px;
-
-	float: left;
-	display: inline;
-}
-.tab > ul.tab-list > li > a {
-
-	margin: 10px 0px 10px 10px;
-	display: block;
-}
-*/
 
 
 /**
@@ -223,26 +224,6 @@ nav > ul > li > a {
 }
 
 nav > ul > li > a > img {
-	width: 100%;
-}
-
-/**
- *
- * メニュー
- *
- */
-ul.menu-2-columns > li {
-	width: 50%;
-	float: left;
-	display: inline;
-}
-
-ul.menu-2-columns > li > a {
-	display: block;
-	text-align: center;
-}
-
-ul.menu-2-columns > li > a > img {
 	width: 100%;
 }
 
@@ -603,3 +584,6 @@ ul#clip-images li:nth-child(4n) img.clip-image {
 {
 	width: 100%;
 }
+
+
+

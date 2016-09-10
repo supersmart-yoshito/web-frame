@@ -6,18 +6,15 @@
 header {
 	width: 100%;
 }
-
+footer {
+	clear: both ;
+}
 html, body {
 	margin:  0px;
 	padding: 0px;
 	width:  100%;
 	height: 100%;
 }
-
-footer {
-	clear: both ;
-}
-
 body > #container {
 	height: auto;
 }
@@ -29,9 +26,14 @@ body > #container {
 	min-height: 100%;
 	text-align: center;
 }
-
 .left {
 	float: left;
+}
+.tl {
+	text-align: left;
+}
+.center, .tc {
+	text-align: center;
 }
 .clearfix {
 	clear: both ;
@@ -39,12 +41,133 @@ body > #container {
 .space20 {
 	margin: 20px 0px;
 }
-
 h1 h2 h3 h4 {
 	margin: 0px;
 	padding: 0px;
 }
 
-.center {
+/**
+ *
+ * リスト
+ *
+ */
+.layout-2-column-left {
+	margin: 0px;
+	padding: 0px;
+	width: 20% ;
+}
+.layout-2-column-right {
+	margin: 0px;
+	padding: 0px;
+	width: 80% ;
+}
+.layout-3-column-left {
+	margin: 0px;
+	padding: 0px;
+	width: 20% ;
+	float: left;
+}
+.layout-3-column-center {
+	margin: 0px;
+	padding: 0px;
+	width: 60% ;
+	float: left;
+}
+.layout-3-column-center-to-right {
+	margin: 0px;
+	padding: 0px;
+	width: 80% ;
+	float: left;
+}
+.layout-3-column-right {
+	margin: 0px;
+	padding: 0px;
+	width: 20% ;
+	clear: both;
+}
+ul.layout-2-column {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	list-style: none;
+}
+ul.layout-2-column > li {
+	margin: 0px;
+	padding: 0px;
+	width: 50%;
+	float: left;
+	display: inline;
+}
+ul.layout-2-column > li > a {
+	margin: 0px;
+	padding: 0px;
+	display: block;
 	text-align: center;
+}
+ul.layout-2-column > li > a > img {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+ul.layout-3-column {
+	margin: 0px;
+	margin-left: 4%;
+	padding: 0px;
+	list-style: none;
+}
+ul.layout-3-column li {
+	margin: 0px;
+	padding: 0px;
+	width: 32%;
+	float: left;
+	display: inline;
+}
+ul.layout-3-column li a {
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+	display: block;
+	text-align: center;
+	overflow: hidden;
+}
+ul.layout-3-column li a img {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+ul.layout-4-column {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.layout-4-column li {
+	margin: 0px;
+	padding: 0px;
+	width: 25%;
+	float: left;
+	display: inline;
+}
+ul.layout-4-column li:nth-child(4n+1) {
+	clear: both;
+}
+ul.layout-4-column li a {
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+	display: block;
+	text-align: center;
+	overflow: hidden;
+}
+ul.layout-4-column li a img {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.z1 {
+	position: relative;
+	z-index: 1;
+}
+.z2 {
+	position: relative;
+	z-index: 2;
 }
