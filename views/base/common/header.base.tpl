@@ -5,13 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-{if $isPc}
 <link rel="stylesheet" href="/css/common.css">
 <link rel="stylesheet" href="/css/style.css">
-{elseif $isSp}
-<link rel="stylesheet" href="/css/common.sp.css">
-<link rel="stylesheet" href="/css/style.sp.css">
-{/if}
 
 {if $add_css}
 {assign var="css" value=","|explode:$add_css}
@@ -21,6 +16,7 @@
 {/if}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/jquery.hoverpulse.js"></script>
 
 {if $add_js}
 {assign var="js" value=","|explode:$add_js}
@@ -36,6 +32,12 @@
 <li><a href="/"><img src="https://placehold.jp/3d4070/ffffff/150x40.png" alt="logo" /></a></li>
 </ul>
 <ul>
+<li>
+<form class="search" action="/search" method="post">
+<input type="text" name="keyword" value="" placeholder="検索キーワード" />
+<button>O</button>
+</form>
+</li>
 {if $user}
 <li><a href="/account/mypage/{$user->getId()}">マイページ</a></li>
 <li><a href="/account/mail">メール</a></li>

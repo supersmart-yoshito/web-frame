@@ -1,4 +1,4 @@
-{include file="`$smarty.const.TEMPLATE_DIR`/common/header.tpl"}
+{include file="`$smarty.const.PATH_ROOT`/views/base/common/header.tpl"}
 
 
 <form action="" method="post">
@@ -19,4 +19,4 @@
 <input type="hidden" name="__token" value="{$__token}" />
 </form>
 
-{include file="`$smarty.const.TEMPLATE_DIR`/common/footer.tpl"}
+{include file="`$smarty.const.PATH_ROOT`/views/base/common/footer.tpl"}

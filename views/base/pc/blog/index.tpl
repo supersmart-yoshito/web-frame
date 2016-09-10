@@ -1,6 +1,6 @@
 {include file="`$smarty.const.PATH_ROOT`/views/base/common/header.tpl"}
 
-<div class="">
+<div class="left3column">
   <ul>
   {if $user}
   {if $myblog}
@@ -14,12 +14,15 @@
   {/if}
 </div>
 
-
+<div class="centert3column">
 {foreach from=$usersArticle item=userArticle}
 <li><a href="/blog/detail/{$userArticle->getUserId()}/{$userArticle->getId()}">{$userArticle->getTitle()}</a></li>
 {/foreach}
 </ul>
+</div>
 
+<div class="right3column">
+</div>
 
 
 {include file="`$smarty.const.PATH_ROOT`/views/base/common/footer.tpl"}

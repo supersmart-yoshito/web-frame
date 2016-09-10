@@ -1,4 +1,4 @@
-{include file="`$smarty.const.TEMPLATE_DIR`/common/header.tpl"}
+{include file="`$smarty.const.PATH_ROOT`/views/base/common/header.tpl"}
 
 <ul>
 <li><a href="/blog">top</a></li>
@@ -36,4 +36,4 @@
 
 
 
-{include file="`$smarty.const.TEMPLATE_DIR`/common/footer.tpl"}
+{include file="`$smarty.const.PATH_ROOT`/views/base/common/footer.tpl"}
