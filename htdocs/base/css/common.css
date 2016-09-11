@@ -1,5 +1,32 @@
 /**
  *
+ * テキスト
+ *
+ */
+* {
+	font-family: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+}
+
+/**
+ *
+ * 配色
+ *
+ */
+.c000 {
+	color: #000;
+}
+.cfff {
+	color: #fff;
+}
+.ctxt {
+	color: #3B240B;
+}
+.bg-gray {
+	background-color: rgba(240,240,240,0.8) ;
+}
+
+/**
+ *
  *
  *
  */
@@ -44,6 +71,18 @@ body > #container {
 h1 h2 h3 h4 {
 	margin: 0px;
 	padding: 0px;
+}
+
+/**
+ *
+ * 余白
+ *
+ */
+.p0 {
+	padding: 0px;
+}
+.m0 {
+	margin: 0px;
 }
 
 /**
@@ -171,3 +210,4 @@ ul.layout-4-column li a img {
 	position: relative;
 	z-index: 2;
 }
+

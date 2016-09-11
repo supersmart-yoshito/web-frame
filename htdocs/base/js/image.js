@@ -8,10 +8,18 @@
 $(function() {
 
 	var imageList = $('#image-post').children('#images') ;
-	var listMode = imageList.data('listMode') ;
 	var listSize = imageList.data('listSize') ;
 	var colSize = imageList.data('listCols') ;
-	var length = imageList.outerWidth()/colSize-4 ;
+        if (imageList.data('listMode')) {
+	    var listMode = imageList.data('listMode') ;
+        } else {
+	    var listMode = 0 ;
+        }
+        if (imageList.data('listRect')) {
+	    var length = imageList.data('listRect') ;
+        } else {
+	    var length = imageList.outerWidth()/colSize-4 ;
+        }
 
 
 

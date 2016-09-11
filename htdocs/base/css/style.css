@@ -1,11 +1,5 @@
 /**
  *
- * 配色
- *
- */
-
-/**
- *
  * ボタン
  *
  */
@@ -27,11 +21,39 @@
  * 枠
  *
  */
-.frame-dotted {
+.h100 {
+	height: 100px;
+}
+.h150 {
+	height: 150px;
+}
+.h200 {
+	height: 200px;
+}
+.h250 {
+	height: 250px;
+}
+.h300 {
+	height: 300px;
+}
+.w100 {
+	width: 100px;
+}
+.w150 {
+	width: 150px;
+}
+.w200 {
+	width: 200px;
+}
+.w250 {
+	width: 250px;
+}
+.w300 {
+	width: 300px;
+}
+.box {
 	height: 180px ;
-	border: dotted 1px;
-
-	background-color: #eeeeee;
+	width: 100%;
 }
 
 /**
@@ -586,4 +608,9 @@ ul#clip-images li:nth-child(4n) img.clip-image {
 }
 
 
+/**
+ *
+ * 写真共有
+ *
+ */
 
