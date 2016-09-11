@@ -12,4 +12,8 @@ $routing = array_merge($routing, array(
 		'controller' => 'photo',
 		'action' => 'post',
 	),
+	'/photo/image/:photoId' => array(
+		'controller' => 'photo',
+		'action' => 'image',
+	),
 )) ;

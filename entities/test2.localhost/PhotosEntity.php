@@ -2,8 +2,9 @@
 class PhotosEntity {
 	public $id ;
 	public $account_id ;
-	public $name ;
+	public $title ;
 	public $image ;
+	public $mime ;
 	public $created ;
 	public $updated ;
 	public $deleted ;
@@ -18,13 +19,18 @@ class PhotosEntity {
 		return $this ;
 	}
 
-	public function setName($name) {
-		$this->name = $name ;
+	public function setTitle($title) {
+		$this->title = $title ;
 		return $this ;
 	}
 
 	public function setImage($image) {
 		$this->image = $image ;
+		return $this ;
+	}
+
+	public function setMime($mime) {
+		$this->mime = $mime ;
 		return $this ;
 	}
 
@@ -52,12 +58,16 @@ class PhotosEntity {
 		return $this->account_id ;
 	}
 
-	public function getName() {
-		return $this->name ;
+	public function getTitle() {
+		return $this->title ;
 	}
 
 	public function getImage() {
 		return $this->image ;
+	}
+
+	public function getMime() {
+		return $this->mime ;
 	}
 
 	public function getCreated() {
