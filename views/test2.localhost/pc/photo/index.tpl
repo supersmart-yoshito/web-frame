@@ -9,7 +9,7 @@
   </div>
 
 {else}{* $user *}
-  <div id="post" class="h200">
+  <div id="post" class="h100 mb50">
     <p>さあ写真を公開して、みんなと共有しよう。</p>
 {if $error}
     <p>{$error}</p>
@@ -33,7 +33,7 @@
     </form>
   </div>
 
-  <div id="myphoto" class="h200 clearfix">
+  <div id="myphoto" class="h200 mb50 clearfix">
     <h4 class="ctxt m0 p0">マイフォト</h4>
     <ul class="layout-3-column">
 {foreach from=$myphotos item=item}
@@ -43,16 +43,16 @@
 {/foreach}
     </ul>
 {if $myphotos}
-    <p><a href="/photo/my">もっと見る</a></p>
+    <p class="clearfix"><a href="/photo/user/{$user->getId()}">もっと見る</a></p>
 {/if}
   </div>
 
-  <div id="friends-photo" class="clearfix h200">
+  <div id="friends-photo" class="clearfix h200 mb50">
     <h4 class="ctxt m0 p0">友人の写真</h4>
     <ul class="layout-3-column">
 {foreach from=$friendphotos item=item}
-      <li><a href="/photo/{$item.image}">
-        <img src="{$item.image}" alt="{$item.name}" />
+      <li><a href="/photo/image/{$item->id}" rel="lightbox" title="{$item->title}">
+        <img src="/photo/image/{$item->id}" alt="{$item->title}" />
       </a></li>
 {foreachelse}
       <li>
@@ -60,18 +60,18 @@
 {/foreach}
     </ul>
 {if $friendphotos}
-    <p><a href="/photo/friends">もっと見る</a></p>
+    <p class="clearfix"><a href="/photo/friends">もっと見る</a></p>
 {else}
-    <p>友人に紹介して、さあ写真を共有しよう。</p>
+    <p class="clearfix">友人に紹介して、さあ写真を共有しよう。</p>
 {/if}
   </div>
 
-  <div id="group-photo" class="h200">
+  <div id="group-photo" class="clearfix h200 mb50">
     <h4 class="ctxt m0 p0">グループの写真</h4>
     <ul class="layout-3-column">
 {foreach from=$groupphotos item=item}
-      <li><a href="/photo/{$item.image}">
-        <img src="{$item.image}" alt="{$item.name}" />
+      <li><a href="/photo/image/{$item->id}" rel="lightbox" title="{$item->title}">
+        <img src="/photo/image/{$item->id}" alt="{$item->title}" />
       </a></li>
 {foreachelse}
       <li>
@@ -79,61 +79,26 @@
 {/foreach}
     </ul>
 {if $groupphotos}
-    <p><a href="/photo/group">もっと見る</a></p>
+    <p class="clearfix"><a href="/photo/group">もっと見る</a></p>
 {else}
-    <p>グループで写真を共有しよう。</p>
+    <p class="clearfix">グループで写真を共有しよう。</p>
 {/if}
   </div>
 {/if}
 
-  <div id="latest-photo" class="h200">
+  <div id="latest-photo" class="clearfix h200 mb50">
     <h4 class="ctxt m0 p0">最新の写真</h4>
     <ul class="layout-3-column">
-      <li><a href="/image/photo/sample/sample1.jpg" rel="lightbox" title="サンプル画像1">
-        <img src="/image/photo/sample/sample1.jpg" alt="サンプル画像1" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample1.jpg" rel="lightbox" title="サンプル画像1">
-        <img src="/image/photo/sample/sample1.jpg" alt="サンプル画像1" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample2.jpg" rel="lightbox" title="サンプル画像2">
-        <img src="/image/photo/sample/sample2.jpg" alt="サンプル画像2" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-      <li><a href="/image/photo/sample/sample3.jpg" rel="lightbox" title="サンプル画像3">
-        <img src="/image/photo/sample/sample3.jpg" alt="サンプル画像3" />
-      </a></li>
-{foreach from=$latest item=item}
-      <li><a href="/photo/{$item.image}">
-        <img src="{$item.image}" alt="{$item.name}" />
+{foreach from=$latestphotos item=item}
+      <li><a href="/photo/image/{$item->id}" rel="lightbox" title="{$item->title}">
+        <img src="/photo/image/{$item->id}" alt="{$item->title}" />
       </a></li>
 {foreachelse}
       <li>
       </li>
 {/foreach}
     </ul>
+    <p class="clearfix"><a href="/photo/latest">もっと見る</a></p>
   </div><!-- #latest-photo -->
 </div><!-- .layout-3-column-center-->
 
