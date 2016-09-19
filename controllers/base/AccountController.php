@@ -32,11 +32,11 @@ class AccountController extends AbstractController {
 		$user = $this->mapper['Accounts']->findById($userId) ;
 
 		if (empty($user) || ($my->getId() !== $user->getId() && !$user->getPublish())) {
-			return $this->render('account/unknown.tpl') ;
+			return $this->render('account/unknown.tpl', array('user' => $my)) ;
 		} else if ($my->getId() === $user->getId()) {
 			return $this->render('account/mypage.tpl', array('user' => $my)) ;
 		} else {
-			return $this->render('account/userpage.tpl', array('user' => $user)) ;
+			return $this->render('account/userpage.tpl', array('user' => $my)) ;
 		}
 	}
 

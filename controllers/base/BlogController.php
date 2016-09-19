@@ -31,7 +31,7 @@ class BlogController extends AbstractController {
 		// 認証が必要なページ
 		if (!$this->_user) {
 			$this->redirect(
-				'/accounts/login?r='.urlencode($this->event->getRequestUri())
+				'/account/login?r='.urlencode($this->event->getRequestUri())
 			) ;
 			exit ;
 		}

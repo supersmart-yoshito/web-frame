@@ -54,7 +54,7 @@ class BaseModel extends AbstractModel {
 	 */
 	public function findActive($where=array()) {
 
-		$this->find($where)->where('deleted', null) ;
+		$this->find($where)->where('deleted', '0000-00-00 00:00:00') ;
 		return $this ;
 	}
 

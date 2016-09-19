@@ -20,6 +20,7 @@ class PhotosModel extends BaseModel {
 			$entity->setMime($mime) ;
 			$entity->setCreated(date('Y-m-d H:i:s')) ;
 			$entity->setUpdated(date('Y-m-d H:i:s')) ;
+			$entity->setDeleted('0000-00-00 00:00:00') ;
 			$entity = $this->save($entity) ;
 
 			return $entity->getId() ;
@@ -34,11 +35,12 @@ class PhotosModel extends BaseModel {
 	 * @param integer $accountId
 	 * @return array 
 	 */
-	public function findByAccountId($accountId, $limit = 10) {
+	public function findByAccountId($accountId, $limit = 10, $offset = 0) {
 
 		return $this->findActive()
 				->where('account_id', $accountId)
 				->order('created desc')
+				->limit(sprintf("%s,%s", $offset, $limit))
 				->result()
 				->getAll() ;
 	}

@@ -28,23 +28,24 @@
 </head>
 <body>
 <header>
-<ul style="float: left;">
-<li><a href="/"><img src="https://placehold.jp/3d4070/ffffff/150x40.png" alt="logo" /></a></li>
-</ul>
-<ul>
-<li>
-<form class="search" action="/search" method="post">
-<input type="text" name="keyword" value="" placeholder="検索キーワード" />
-<button>O</button>
-</form>
-</li>
+  <ul class="left">
+    <li><a href="/"><img src="https://placehold.jp/3d4070/ffffff/150x60.png" alt="logo" /></a></li>
+  </ul>
+  <ul id="header">
+    <li style="vertical-align: middle;">
+      <form class="search" action="/search" method="post">
+        <input style="height: 30px;" type="text" name="keyword" value="" placeholder="検索キーワード" />
+        <button>O</button>
+      </form>
+    </li>
 {if $user}
-<li><a href="/account/mypage/{$user->getId()}">マイページ</a></li>
-<li><a href="/account/mail">メール</a></li>
+    <li><a href="/account/mypage/{$user->getId()}">マイページ</a></li>
+    <li><a href="/message/inbox">メッセージ</a></li>
 {else}
-<li><a href="/account/login">ログイン</a></li>
+    <li><a href="/account/login">ログイン</a></li>
+    <li><a href="/message">メッセージ</a></li>
 {/if}
-<li><a href="/help">ヘルプ</a></li>
-</ul>
+    <li><a href="/help">ヘルプ</a></li>
+  </ul>
 </header>
 <div id="container" class="clearfix">

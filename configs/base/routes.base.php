@@ -9,10 +9,6 @@ $routing = array(
 		'controller' => 'account',
 		'action' => 'index',
 	), 
-	'/account/mypage/:userid' => array(
-		'controller' => 'account',
-		'action' => 'mypage',
-	), 
 	'/account/login' => array(
 		'controller' => 'account',
 		'action' => 'login',
@@ -21,6 +17,15 @@ $routing = array(
 		'controller' => 'account',
 		'action' => 'logout',
 	), 
+	'/account/mypage/:userid' => array(
+		'controller' => 'account',
+		'action' => 'mypage',
+	), 
+	/**
+	 *
+	 * 会員登録
+	 *
+	 */
 	'/account/create' => array(
 		'controller' => 'account',
 		'action' => 'create',

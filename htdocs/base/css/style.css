@@ -21,6 +21,24 @@
  * 枠
  *
  */
+.fs12 {
+	font-size: 1.2em;
+}
+.h100p {
+	height: 100%;
+}
+.h20 {
+	height: 20px;
+}
+.h25 {
+	height: 25px;
+}
+.h30 {
+	height: 30px;
+}
+.h50 {
+	height: 50px;
+}
 .h100 {
 	height: 100px;
 }
@@ -35,6 +53,9 @@
 }
 .h300 {
 	height: 300px;
+}
+.w100p {
+	width: 100%;
 }
 .w100 {
 	width: 100px;
@@ -209,7 +230,7 @@ ul.none-list {
  */
 header > ul {
 	text-align: right;
-	height: 60px;
+	height: 80px;
 } 
 header > ul > li {
 	margin: 10px;

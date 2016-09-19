@@ -24,6 +24,16 @@
 .bg-gray {
 	background-color: rgba(240,240,240,0.8) ;
 }
+/* ヘッダ陰影 */
+#header {
+	padding-top: 10px;
+	margin-bottom: 2px;
+	box-shadow: 0 1px 2px #333333;
+	-moz-box-shadow: 0 1px 2px #333333; /* Firefox対応 */
+	-webkit-box-shadow: 0 1px 2px #333333; /* Safari、Chrome対応 */
+}
+
+
 
 /**
  *
@@ -84,12 +94,23 @@ h1 h2 h3 h4 {
 .m0 {
 	margin: 0px;
 }
+.mb20 {
+	margin-bottom: 20px;
+}
+.mb50 {
+	margin-bottom: 50px;
+}
 
 /**
  *
  * リスト
  *
  */
+.layout-1-column {
+	margin: 0px;
+	padding: 0px;
+	width: 100% ;
+}
 .layout-2-column-left {
 	margin: 0px;
 	padding: 0px;

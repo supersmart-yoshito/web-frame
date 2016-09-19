@@ -1,28 +1,20 @@
 <?php
 
-class PhotoController extends AbstractController {
+class PhotoController extends BaseController {
 
-	private $_user ;
-
+	protected $authActions ;
 	/**
 	 * コントローラ初期化
 	 */
 	public function initController() {
-		$this->registerPrefilter($this, 'authenticator');
+		$this->authActions = array(
+			'index', 'post',
+		) ;
+		parent::initController() ;
 	}
 
-	/**
-	 * ユーザ認証
-	 */
-	public function authenticator() {
-
-		// ログインユーザ取得
-		if ($this->mapper['Accounts']->isLoggedIn()) {
-			$this->_user = $this->mapper['Accounts']->getUser() ;
-			$this->assign('user', $this->_user) ;
-		}
-
-		return true ;
+	public function topAction() {
+		return $this->indexAction() ;
 	}
 
 	public function indexAction() {
@@ -35,7 +27,28 @@ class PhotoController extends AbstractController {
 				->findByAccountId($this->_user->getId()) ;
 			$this->assign('myphotos', $myphotos) ;
 
+			// 友人の写真
+			$friends = $this->mapper['Friends']
+				->findActive(array('user_id' => $this->_user->getId()))
+				->result()->getAll() ;
+			$firendphotos = array() ;
+			foreach ($friends as $friend) {
+				$photos = $this->mapper['Photos']
+					->findByAccountId($friend->getFriendId()) ;
+				if (!empty($photos)) {
+					$friendphotos = array_merge($firendphotos, $photos) ;
+				}
+			}
+			$this->assign('friendphotos', $friendphotos) ;
 		}
+
+		// 直近の写真
+		$latestphotos = $this->mapper['Photos']
+					->find()
+					->order('created desc')
+					->result()
+					->getAll();
+		$this->assign('latestphotos', $latestphotos) ;
 
 		// 直近の公開設定されているフォト取得
 		return $this->render('photo/index.tpl') ;
@@ -111,6 +124,89 @@ class PhotoController extends AbstractController {
 		header('Content-Type: '.$image->mime) ;
 		echo $image->getImage() ;
 	}
+
+	/**
+	 * 該当のユーザの写真一覧ページ
+	 *
+	 * @param string $userId ユーザID
+	 */
+	public function userAction($userId) {
+
+		// ユーザの存在確認
+		$user = $this->mapper['Accounts']->findById($userId) ;
+		if (empty($user)) {
+			return $this->render('photo/error.tpl', array(
+				'error' => '存在しないユーザのページにアクセスしました。',
+			)) ;
+		}
+
+		// ログイン済み
+		if ($this->mapper['Accounts']->isLoggedIn()) {
+		}
+
+		/**  TODO
+		// 参照許可のないユーザへのアクセス確認
+		if () {
+		}
+		*/
+
+		// 該当ユーザの写真一覧を取得
+		list($limit, $offset) = $this->getPage() ;
+		$count = $this->mapper['Photos']->count(array('account_id' => $user->getId())) ;
+		$this->assign('pager', $this->getPager($count)) ;
+		$userphotos = $this->mapper['Photos']->findByAccountId($user->getId(), 30) ;
+		$this->assign('userphotos', $userphotos) ;
+
+		return $this->render('photo/user.tpl') ;
+	}
+
+	/**
+	 * 自分の友達の写真一覧ページ
+	 *
+	 * @param string $userId ユーザID
+	 */
+	public function friendsAction() {
+
+		// ログイン済み
+		if ($this->mapper['Accounts']->isLoggedIn()) {
+
+			$friends = $this->mapper['Friends']->findByAccountId($this->_user->getId()) ;
+			$friendphotos = array() ;
+			foreach ($friends as $friend) {
+
+				$friendphotos[$friend->getFriendId()] = $this->mapper['Photos']->findByAccountId($friend->getFriendId()) ;
+
+			}
+			$this->assign('friends', $friends) ;
+			$this->assign('friendphotos', $friendphotos) ;
+		}
+
+
+/*
+		// ユーザの存在確認
+		$user = $this->mapper['Accounts']->findById($userId) ;
+		if (empty($user)) {
+			return $this->render('photo/error.tpl', array(
+				'error' => '存在しないユーザのページにアクセスしました。',
+			)) ;
+		}
+*/
+
+		/**  TODO
+		// 参照許可のないユーザへのアクセス確認
+		if () {
+		}
+		*/
+
+/*
+		// 該当ユーザの写真一覧を取得
+		list($limit, $offset) = $this->getPage() ;
+		$count = $this->mapper['Photos']->count(array('account_id' => $user->getId())) ;
+		$this->assign('pager', $this->getPager($count)) ;
+		$userphotos = $this->mapper['Photos']->findByAccountId($user->getId(), 30) ;
+		$this->assign('userphotos', $userphotos) ;
+*/
+
+		return $this->render('photo/friends.tpl') ;
+	}
 }
-
-

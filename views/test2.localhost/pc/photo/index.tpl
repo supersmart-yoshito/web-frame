@@ -4,8 +4,8 @@
 <div class="layout-3-column-center left">
 {if !$user}
   <div id="myphoto" class="h200">
-    <h4 class="ctxt m0 p0">マイフォト</h4>
-    <a href="/account/login?r={$smarty.server.REQUEST_URI}"><p>ログインして利用する</p></a>
+    <h4 class="ctxt m0 p0">マイアルバム</h4>
+    <a href="/photo/index"><p>ログインして利用する</p></a>
   </div>
 
 {else}{* $user *}
@@ -102,7 +102,7 @@
   </div><!-- #latest-photo -->
 </div><!-- .layout-3-column-center-->
 
-{include file="`$smarty.const.PATH_VIEWS`/common/menu.parts.tpl"}
+{include file="`$smarty.const.PATH_ROOT`/views/base/pc/parts/profile.parts.tpl"}
 
 <script src="/js/lightbox.js"></script>
 {include file="`$smarty.const.PATH_ROOT`/views/base/common/footer.tpl"}

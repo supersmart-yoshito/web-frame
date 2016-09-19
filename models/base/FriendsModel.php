@@ -46,7 +46,18 @@ class FriendsModel extends BaseModel {
 		$user->setDeleted(date('Y-m-d H:i:s')) ;
 		return $this->save($user) ;
 	}
+
+
+	/**
+	 * 友人一覧取得
+	 * @param integer $userId ユーザID
+	 * @return array
+	 */
+	public function findByAccountId($accountId) {
+
+		return $this->findActive()
+			->where('user_id', $accountId)
+			->result()
+			->getAll() ;
+	}
 }
-
-
-

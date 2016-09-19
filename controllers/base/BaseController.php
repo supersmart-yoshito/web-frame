@@ -2,7 +2,7 @@
 
 class BaseController extends AbstractController {
 
-	private $_user ;
+	protected $_user ;
 	private $_authPages ;
 
 	/**
@@ -27,6 +27,11 @@ class BaseController extends AbstractController {
 		$this->_user = $this->getUser() ;
 		$this->assign('user', $this->_user) ;
 
+		// 認証が必要なページはなし1
+		if (empty($this->_authPages)) {
+			return true ;
+		}
+
 		// 認証が必要なページ以外
 		if (is_array($this->_authPages) && !in_array($this->action, $this->_authPages)) {
 			return true ;
@@ -35,7 +40,7 @@ class BaseController extends AbstractController {
 		// 認証が必要なページ
 		if (!$this->_user) {
 			$this->redirect(
-				'/accounts/login?r='.urlencode($this->event->getRequestUri())
+				'/account/login?r='.urlencode($this->event->getRequestUri())
 			) ;
 			exit ;
 		}
