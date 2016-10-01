@@ -90,8 +90,8 @@
     <h4 class="ctxt m0 p0">最新の写真</h4>
     <ul class="layout-3-column">
 {foreach from=$latestphotos item=item}
-      <li><a href="/photo/image/{$item->id}" rel="lightbox" title="{$item->title}">
-        <img src="/photo/image/{$item->id}" alt="{$item->title}" />
+      <li><a href="/account/user/{$item->getAccountId()}">
+        <img src="/photo/image/{$item->getId()}" alt="{$item->getTitle()}" />
       </a></li>
 {foreachelse}
       <li>

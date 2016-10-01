@@ -203,7 +203,7 @@ abstract class AbstractController extends AppUtil {
 	 *
 	 *
 	 */
-	protected function getAction() {
+	public function getAction() {
 		return $this->action ;
 	}
 

@@ -38,11 +38,15 @@ $routing = array_merge($routing, array(
 	),
 	'/friend' => array(
 		'controller' => 'friend',
-		'action' => 'top',
-	), 
-	'/friend/index' => array(
-		'controller' => 'friend',
 		'action' => 'index',
+	), 
+	'/friend/list/:accountId' => array(
+		'controller' => 'friend',
+		'action' => 'list',
+	), 
+	'/friend/search' => array(
+		'controller' => 'friend',
+		'action' => 'search',
 	), 
 	'/group' => array(
 		'controller' => 'group',
@@ -56,7 +60,7 @@ $routing = array_merge($routing, array(
 		'controller' => 'message',
 		'action' => 'index',
 	), 
-	'/message/inbox' => array(
+	'/message/inbox/:messageId' => array(
 		'controller' => 'message',
 		'action' => 'inbox',
 	), 
@@ -68,11 +72,19 @@ $routing = array_merge($routing, array(
 		'controller' => 'message',
 		'action' => 'outbox',
 	), 
+	'/message/outbox/:messageId' => array(
+		'controller' => 'message',
+		'action' => 'outbox',
+	), 
 	'/message/editbox' => array(
 		'controller' => 'message',
 		'action' => 'editbox',
 	), 
 	'/message/editbox/edit/:editId' => array(
+		'controller' => 'message',
+		'action' => 'edit',
+	), 
+	'/message/editbox/edit/:editId/:accountId' => array(
 		'controller' => 'message',
 		'action' => 'edit',
 	), 

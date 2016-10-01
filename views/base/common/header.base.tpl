@@ -40,7 +40,7 @@
     </li>
 {if $user}
     <li><a href="/account/mypage/{$user->getId()}">マイページ</a></li>
-    <li><a href="/message/inbox">メッセージ</a></li>
+    <li><a href="/message/inbox" class="{if $isNewMessage}new{/if}">メッセージ</a></li>
 {else}
     <li><a href="/account/login">ログイン</a></li>
     <li><a href="/message">メッセージ</a></li>

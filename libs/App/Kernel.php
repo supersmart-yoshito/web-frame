@@ -81,12 +81,12 @@ class AppKernel {
 
 		// アクション実行
 		$template = call_user_func_array(array($routing->controller, $routing->action), $routing->params) ;
-		$this->_engine->display($template) ;
 
 		// 事後フィルタ設定
 		if ($routing->controller->isRegisteredFilter('postfilter')) {
 			$routing->controller->executePostFilter() ;
 		}
+		$this->_engine->display($template) ;
 	}
 
 
