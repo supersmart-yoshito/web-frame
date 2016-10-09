@@ -9,6 +9,10 @@
       <td>{include file="`$smarty.const.PATH_ROOT`/views/base/common/sex.parts.tpl"}</td>
     </tr>
     <tr>
+      <th>年齢</th>
+      <td>{include file="`$smarty.const.PATH_ROOT`/views/base/common/age.parts.tpl"}</td>
+    </tr>
+    <tr>
       <th>都道府県</th>
       <td>{include file="`$smarty.const.PATH_ROOT`/views/base/common/prefectures.parts.tpl"}</td>
     </tr>
