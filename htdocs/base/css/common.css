@@ -12,6 +12,9 @@
  * 配色
  *
  */
+.warn {
+	color: #FF0000 ;
+}
 .c000 {
 	color: #000;
 }
@@ -100,8 +103,17 @@ h1 h2 h3 h4 {
 .p0 {
 	padding: 0px;
 }
+.pl20 {
+	padding-left: 20px;
+}
 .m0 {
 	margin: 0px;
+}
+.ml10 {
+	margin-left: 10px;
+}
+.ml20 {
+	margin-left: 20px;
 }
 .mb20 {
 	margin-bottom: 20px;

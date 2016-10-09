@@ -21,6 +21,9 @@
  * 枠
  *
  */
+.fs08 {
+	font-size: 0.8em;
+}
 .fs12 {
 	font-size: 1.2em;
 }
@@ -53,6 +56,9 @@
 }
 .h300 {
 	height: 300px;
+}
+.w80p {
+	width: 80%;
 }
 .w100p {
 	width: 100%;

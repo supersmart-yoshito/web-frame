@@ -56,34 +56,46 @@ class AccountController extends AbstractController {
 			return $this->render('account/create.tpl') ;
 		}
 
+		$params = $this->event->getParams() ;
 		// 登録済みチェック
-		$userId = $this->event->getParams('user_id') ;
-		if ($this->mapper['Accounts']->isJoined($userId)) {
+		if ($this->mapper['Accounts']->isJoined($params['user_id'])) {
 
-			return $this->render('account/create.tpl', array_merge(
-				array('error' => 1),
-				$this->event->post
+			return $this->render('account/create.tpl', array(
+				'error' => 1,
+				'params' => $params,
 			)) ;
 		}
 
+
+
 		// 確認前
-		$confirm = $this->event->getParams('confirm') ;
+		$confirm = $params['confirm'] ;
 		if ($confirm != 1) {
-			return $this->render('account/create_confirm.tpl', $this->event->post) ;
+			return $this->render('account/create_confirm.tpl', array(
+				"params" => $params
+			)) ;
 		}
 
 		// 会員登録
-		$userPass = $this->event->getParams('user_pass') ;
-		if (!($id = $this->mapper['Accounts']->create($userId, $userPass))) {
+		$id = $this->mapper['Accounts']->create(
+			$params['user_id'],
+			$params['user_pass'],
+			$params['user_nickname'],
+			$params['user_birthday'],
+			$params['user_sex'],
+			$params['user_prefectures'],
+			$params['user_profile']
+		) ;
+		if (!$id) {
 
-			return $this->render('account/create.tpl', array_merge(
-				array('error' => 1),
-				$this->event->post
+			return $this->render('account/create.tpl', array(
+				'error' => 1,
+				'params' => $params,
 			)) ;
 		}
 
 		// ログイン
-		$this->mapper['Accounts']->login($userId, $userPass) ;
+		$this->mapper['Accounts']->login($params['user_id'], $params['user_pass']) ;
 
 		return $this->render('account/create_complete.tpl', array('id' => $id)) ;
 	}

@@ -5,6 +5,10 @@ class AccountsEntity {
 	public $user_pass ;
 	public $user_status ;
 	public $nickname ;
+	public $prefectures ;
+	public $birthday ;
+	public $sex ;
+	public $profile ;
 	public $publish ;
 	public $created ;
 	public $updated ;
@@ -32,6 +36,26 @@ class AccountsEntity {
 
 	public function setNickname($nickname) {
 		$this->nickname = $nickname ;
+		return $this ;
+	}
+
+	public function setPrefectures($prefectures) {
+		$this->prefectures = $prefectures ;
+		return $this ;
+	}
+
+	public function setBirthday($birthday) {
+		$this->birthday = $birthday ;
+		return $this ;
+	}
+
+	public function setSex($sex) {
+		$this->sex = $sex ;
+		return $this ;
+	}
+
+	public function setProfile($profile) {
+		$this->profile = $profile ;
 		return $this ;
 	}
 
@@ -74,6 +98,22 @@ class AccountsEntity {
 
 	public function getNickname() {
 		return $this->nickname ;
+	}
+
+	public function getPrefectures() {
+		return $this->prefectures ;
+	}
+
+	public function getBirthday() {
+		return $this->birthday ;
+	}
+
+	public function getSex() {
+		return $this->sex ;
+	}
+
+	public function getProfile() {
+		return $this->profile ;
 	}
 
 	public function getPublish() {

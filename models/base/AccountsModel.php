@@ -15,7 +15,10 @@ class AccountsModel extends BaseModel {
 	 *
 	 *
 	 */
-	public function create($userId, $userPass, $nickname = null) {
+	public function create(
+		$userId, $userPass, $nickname = null, $birthday = null,
+		$sex = null, $prefectures = null, $profile = null)
+	{
 
 		try {
 			$entity = new AccountsEntity() ;
@@ -24,6 +27,18 @@ class AccountsModel extends BaseModel {
 			$entity->setUserStatus(1) ;
 			if ($nickname) {
 				$entity->setNickname($nickname) ;
+			}
+			if ($birthday) {
+				$entity->setBirthday($birthday) ;
+			}
+			if ($sex) {
+				$entity->setSex($sex) ;
+			}
+			if ($prefectures) {
+				$entity->setPrefectures($prefectures) ;
+			}
+			if ($profile) {
+				$entity->setProfile($profile) ;
 			}
 			$entity->setCreated(date('Y-m-d H:i:s')) ;
 			$entity->setUpdated(date('Y-m-d H:i:s')) ;
