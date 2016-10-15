@@ -17,7 +17,7 @@ class AccountsModel extends BaseModel {
 	 */
 	public function create(
 		$userId, $userPass, $nickname = null, $birthday = null,
-		$sex = null, $prefectures = null, $profile = null)
+		$sex = null, $prefectures = null, $job = null, $profile = null)
 	{
 
 		try {
@@ -36,6 +36,9 @@ class AccountsModel extends BaseModel {
 			}
 			if ($prefectures) {
 				$entity->setPrefectures($prefectures) ;
+			}
+			if ($job) {
+				$entity->setJob($job) ;
 			}
 			if ($profile) {
 				$entity->setProfile($profile) ;

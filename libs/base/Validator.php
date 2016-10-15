@@ -11,22 +11,30 @@ class ValidationRule {
 		$this->_key = $key ;
 		$this->_enable = true ;
 		$this->_pattern = $pattern ;
-		$this->_multibyte = $mb ;
+		$this->_multibyte = $multibyte ;
 	}
 
 	public function getKey() {
-		$this->_key ;
+		return $this->_key ;
 	}
 
 	public function isEnable() {
-		return $this->_enable ;
+		if ($this->_key) {
+			return $this->_enable ;
+		} else {
+			return true ;
+		}
 	}
 
 	public function isValid($value) {
-		if ($multibyte) {
-			return !!mb_ereg($this->_pattern, $value) ;
+		if ($this->_key) {
+			if ($this->_multibyte) {
+				return !!mb_ereg($this->_pattern, $value) ;
+			} else {
+				return !!preg_match($this->_pattern, $value) ;
+			}
 		} else {
-			return !!preg_match($this->_pattern, $value) ;
+			return true ;
 		}
 	}
 }
@@ -43,18 +51,18 @@ class ValidationRules {
 	}
 
 	public function addRule(ValidationRule $rule) {
-		$this->_rule[$rule->getKey()] = $rule ;
+		$this->_rules[$rule->getKey()] = $rule ;
 		return $this ;
 	}
 
 	public function removeRule($key) {
-		unset($this->_rule[$key]) ;
+		unset($this->_rules[$key]) ;
 		return $this ;
 	}
 
 	public function getRule($key) {
-		if ($this->_rule[$key]) {
-			return $this->_rule[$key] ;
+		if ($this->_rules[$key]) {
+			return $this->_rules[$key] ;
 		} else {
 			return $this->_default ;
 		}
@@ -74,13 +82,15 @@ class ValidationRules {
 
 class Validator {
 
+	private $_event ;
 	private $_validationRules ;
 
-	public function __construct(ValidationRules $validationRules) {
+	public function __construct(AppKernelEvent $event, ValidationRules $validationRules) {
+		$this->_event = $event ;
 		$this->_validationRules = $validationRules ;
 	}
 
-	public function isValid($key = null, $value = null) {
+	public function isValid($key, $value) {
 		$result = false ;
 
 		$rule = $this->_validationRules->getRule($key) ;
@@ -89,13 +99,23 @@ class Validator {
 			$result = true ;
 		// ルールがある場合
 		} else {
-			$result = $this->isValid($value) ;
+			$result = $rule->isValid($value) ;
 		}
 
 		return $result ;
 	}
 
-	static public function camelize(&$item, $key) {
-		$item = ucfirst($item) ;
+	public function isValidParams($params) {
+
+		$result = false ;
+		foreach ($params as $key => $value) {
+
+			$result = $this->isValid($key, $value) ;
+			if ($result == false) {
+				break ;
+			}
+		}
+
+		return $result ;
 	}
 }

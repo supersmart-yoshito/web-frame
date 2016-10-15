@@ -8,6 +8,7 @@ abstract class AbstractController extends AppUtil {
 	protected $event;
 	protected $__time ;
 	protected $__token ;
+	protected $_validator ;
 
 	private $_models ;
 	private $_lang ;
@@ -20,6 +21,9 @@ abstract class AbstractController extends AppUtil {
 		$this->action = $action ;
 		$this->_lang = new AppVendorLang($event) ;
 		$this->_ua = new AppVendorUseragent() ;
+
+		require PATH_CONF . '/validation.php' ;
+		$this->_validator = new Validator($this->event, $validationRules) ;
 
 		// サブクラスに初期化メソッドが定義されていれば実行
 		if (method_exists($this, 'initController')) {

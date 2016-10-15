@@ -8,6 +8,7 @@ class AccountsEntity {
 	public $prefectures ;
 	public $birthday ;
 	public $sex ;
+	public $job ;
 	public $profile ;
 	public $publish ;
 	public $created ;
@@ -51,6 +52,11 @@ class AccountsEntity {
 
 	public function setSex($sex) {
 		$this->sex = $sex ;
+		return $this ;
+	}
+
+	public function setJob($job) {
+		$this->job = $job ;
 		return $this ;
 	}
 
@@ -110,6 +116,10 @@ class AccountsEntity {
 
 	public function getSex() {
 		return $this->sex ;
+	}
+
+	public function getJob() {
+		return $this->job ;
 	}
 
 	public function getProfile() {

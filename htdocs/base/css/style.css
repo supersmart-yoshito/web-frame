@@ -93,6 +93,15 @@
 .w300 {
 	width: 300px;
 }
+.w500 {
+	width: 500px;
+}
+.w600 {
+	width: 600px;
+}
+.mw300 {
+	min-width: 300px;
+}
 .box {
 	height: 180px ;
 	width: 100%;
@@ -108,18 +117,6 @@
 {
 	margin: 0px;
 	padding: 0px;
-}
-
-/**
- *
- *
- *
- */
-.flip-description {
-	margin: 0px;
-	padding: 0px;
-	width: 100%;
-	display: none;
 }
 
 /**
@@ -433,16 +430,17 @@ ul.item-list > li > a > div.list-content * {
 
 /**
  *
- * メッセージ
+ * テーブル
  *
  */
 table#message
+,table#form
 {
 	margin: 0px ;
 	padding: 0px ;
-	width: 100% ;
 }
 table#message tr
+,table#form tr
 {
 	width: 100% ;
 }
@@ -456,6 +454,7 @@ table#message tr:hover
 	background-color: #A0A0E0 ;
 }
 table#message tr th.tit
+,table#form tr th.tit
 {
 	margin: 0px ;
 	padding: 5px ;
@@ -465,6 +464,7 @@ table#message tr th.tit
 	background-color: #800000;
 
 	text-align: center ;
+	min-width: 100px;
 }
 table#message tr td
 {
@@ -472,6 +472,19 @@ table#message tr td
 	color: #FFFFFF ;
 	font-size: 0.8em ;
 }
+table#form tr td
+{
+	margin: 0px ;
+	color: #000000 ;
+	font-size: 0.8em ;
+	background-color: #F0F0F0 ;
+	min-width: 400px;
+}
+table#form tr td.confirm
+{
+	text-align: center;
+}
+
 
 /**
  *

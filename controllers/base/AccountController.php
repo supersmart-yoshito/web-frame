@@ -1,7 +1,7 @@
 <?php
 
 
-class AccountController extends AbstractController {
+class AccountController extends BaseController {
 
 
 	/**
@@ -48,7 +48,7 @@ class AccountController extends AbstractController {
 
 		// ログインチェック
 		if ($this->mapper['Accounts']->isLoggedIn()) {
-			$this->redirect('/user') ;
+			$this->redirect('/account/mypage/'.$this->getUser()->getId()) ;
 		}
 
 		// 直接遷移
@@ -57,16 +57,43 @@ class AccountController extends AbstractController {
 		}
 
 		$params = $this->event->getParams() ;
+
+		// バリデーション
+		if (!$this->_validator->isValid('user_id', $params['user_id'])) {
+			$error = array('user_id' => 'ご入力内容をご確認ください。') ;
+			return $this->render('account/create.tpl', array(
+				'error' => $error,
+				'params' => $params,
+			)) ;
+		}
+		if (!$this->_validator->isValid('user_pass', $params['user_pass'])) {
+			$error = array('user_pass' => 'ご入力内容をご確認ください。') ;
+			return $this->render('account/create.tpl', array(
+				'error' => $error,
+				'params' => $params,
+			)) ;
+		}
+		if (!$this->_validator->isValid('user_nickname', $params['user_nickname'])) {
+			$error = array('user_nickname' => 'ご入力内容をご確認ください。') ;
+			return $this->render('account/create.tpl', array(
+				'error' => $error,
+				'params' => $params,
+			)) ;
+		}
+
 		// 登録済みチェック
 		if ($this->mapper['Accounts']->isJoined($params['user_id'])) {
-
+			$error = array('user_id' => 'ご入力のIDは利用できません。') ;
 			return $this->render('account/create.tpl', array(
-				'error' => 1,
+				'error' => $error,
 				'params' => $params,
 			)) ;
 		}
 
 
+		// バリデーション２
+		if (!$this->_validator->isValidParams($params)) {
+		}
 
 		// 確認前
 		$confirm = $params['confirm'] ;
@@ -81,10 +108,11 @@ class AccountController extends AbstractController {
 			$params['user_id'],
 			$params['user_pass'],
 			$params['user_nickname'],
-			$params['user_birthday'],
-			$params['user_sex'],
-			$params['user_prefectures'],
-			$params['user_profile']
+			$params['birthday'],
+			$params['sex'],
+			$params['prefectures'],
+			$params['job'],
+			$params['profile']
 		) ;
 		if (!$id) {
 
@@ -97,7 +125,7 @@ class AccountController extends AbstractController {
 		// ログイン
 		$this->mapper['Accounts']->login($params['user_id'], $params['user_pass']) ;
 
-		return $this->render('account/create_complete.tpl', array('id' => $id)) ;
+		return $this->render('account/create_complete.tpl', array('user' => $this->getUser())) ;
 	}
 
 	/**

@@ -15,6 +15,9 @@
 .warn {
 	color: #FF0000 ;
 }
+.warn:before {
+	content: "※" ;
+}
 .c000 {
 	color: #000;
 }
@@ -103,6 +106,9 @@ h1 h2 h3 h4 {
 .p0 {
 	padding: 0px;
 }
+.pl10 {
+	padding-left: 10px;
+}
 .pl20 {
 	padding-left: 20px;
 }
@@ -120,6 +126,16 @@ h1 h2 h3 h4 {
 }
 .mb50 {
 	margin-bottom: 50px;
+}
+
+/**
+ *
+ * display
+ *
+ */
+.dib
+{
+	display: inline-block;
 }
 
 /**
@@ -173,7 +189,6 @@ h1 h2 h3 h4 {
 	margin: 0px;
 	padding: 0px;
 	width: 20% ;
-	clear: both;
 }
 ul.layout-2-column {
 	margin: 0px;
